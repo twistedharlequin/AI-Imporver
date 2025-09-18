@@ -1,0 +1,326 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Tetap gunakan variabel warna yang sudah ada */
+:root {
+    --bg-color: #f8fafc;
+    --text-color: #334155;
+    --card-bg: #ffffff;
+    --primary-color: #3b82f6;
+    --primary-hover: #2563eb;
+    --border-color: #e2e8f0;
+    --shadow-color: rgba(0, 0, 0, 0.08);
+    --placeholder-color: #94a3b8;
+    --success-bg: #eff6ff;
+    --success-border: #93c5fd;
+
+    /* Variabel baru untuk tombol toggle */
+    --toggle-bg: #e2e8f0;
+    --toggle-dot-bg: #94a3b8;
+    --toggle-dot-active: #ffffff;
+}
+
+body.dark-theme {
+    --bg-color: #1a202c;
+    --text-color: #cbd5e1;
+    --card-bg: #2d3748;
+    --primary-color: #60a5fa;
+    --primary-hover: #3b82f6;
+    --border-color: #4a5568;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --placeholder-color: #a0aec0;
+    --success-bg: #2c5282;
+    --success-border: #63b3ed;
+
+    /* Variabel baru untuk tombol toggle di dark mode */
+    --toggle-bg: #4a5568;
+    --toggle-dot-bg: #a0aec0;
+}
+
+/* Base Styles & Transitions */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.app-container {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 10px 25px var(--shadow-color);
+    max-width: 768px;
+    width: 100%;
+    padding: 30px;
+    text-align: center;
+    transition: background-color 0.5s ease, box-shadow 0.5s ease;
+}
+
+/* Header & Theme Toggle */
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin: 0;
+    transition: color 0.5s ease;
+}
+
+/* --- Desain Tombol Toggle Baru --- */
+.theme-toggle-btn {
+    position: relative;
+    width: 60px; /* Lebar total */
+    height: 30px; /* Tinggi total */
+    background-color: var(--toggle-bg);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    padding: 0;
+    transition: background-color 0.4s ease;
+}
+
+.theme-toggle-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background-color: var(--toggle-dot-bg);
+    border-radius: 50%;
+    transition: transform 0.4s ease, background-color 0.4s ease;
+}
+
+body.dark-theme .theme-toggle-btn::after {
+    transform: translate(25px, -50%);
+    background-color: var(--toggle-dot-active);
+}
+
+.icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    pointer-events: none; /* Agar klik bisa menembus icon */
+    transition: opacity 0.3s ease;
+}
+
+.sun-icon {
+    left: 8px;
+    opacity: 1;
+}
+
+.moon-icon {
+    right: 8px;
+    opacity: 0;
+}
+
+body.dark-theme .sun-icon {
+    opacity: 0;
+}
+
+body.dark-theme .moon-icon {
+    opacity: 1;
+}
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+    /* Light Theme Colors */
+    --bg-color: #f8fafc; /* Light gray background */
+    --text-color: #334155; /* Dark slate gray text */
+    --card-bg: #ffffff; /* White card background */
+    --primary-color: #3b82f6; /* Blue primary color */
+    --primary-hover: #2563eb; /* Darker blue on hover */
+    --border-color: #e2e8f0; /* Light border color */
+    --shadow-color: rgba(0, 0, 0, 0.08); /* Subtle shadow */
+    --placeholder-color: #94a3b8; /* Gray placeholder */
+    --success-bg: #eff6ff; /* Light blue for suggestions */
+    --success-border: #93c5fd; /* Medium blue border */
+}
+
+body.dark-theme {
+    /* Dark Theme Colors */
+    --bg-color: #1a202c; /* Dark charcoal background */
+    --text-color: #cbd5e1; /* Light gray text */
+    --card-bg: #2d3748; /* Darker slate card background */
+    --primary-color: #60a5fa; /* Lighter blue primary color */
+    --primary-hover: #3b82f6; /* Medium blue on hover */
+    --border-color: #4a5568; /* Darker border color */
+    --shadow-color: rgba(0, 0, 0, 0.3); /* More pronounced shadow */
+    --placeholder-color: #a0aec0; /* Lighter gray placeholder */
+    --success-bg: #2c5282; /* Darker blue for suggestions */
+    --success-border: #63b3ed; /* Light blue border */
+}
+
+/* Base Styles & Transitions */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Use min-height for better mobile scrolling */
+    margin: 0;
+    padding: 20px; /* Padding for overall app */
+    box-sizing: border-box;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.app-container {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 10px 25px var(--shadow-color);
+    max-width: 768px;
+    width: 100%;
+    padding: 30px;
+    text-align: center;
+    transition: background-color 0.5s ease, box-shadow 0.5s ease;
+}
+
+/* Main Content */
+.tagline {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin-bottom: 30px;
+    line-height: 1.5;
+    transition: color 0.5s ease;
+}
+
+.input-section {
+    margin-bottom: 30px;
+}
+
+textarea {
+    width: 100%;
+    min-height: 150px;
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    background-color: var(--card-bg);
+    resize: vertical;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, background-color 0.5s ease, color 0.5s ease;
+}
+textarea::placeholder {
+    color: var(--placeholder-color);
+}
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+.primary-btn {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    letter-spacing: 0.5px;
+}
+.primary-btn:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+}
+.primary-btn:active {
+    transform: translateY(0);
+}
+
+/* Results Section & Animations */
+.results-section {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease, color 0.5s ease;
+    text-align: left;
+}
+
+.results-section.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.results-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    transition: color 0.5s ease;
+}
+
+.suggestion-box {
+    background-color: var(--success-bg);
+    border-left: 5px solid var(--success-border);
+    padding: 20px;
+    border-radius: 8px;
+    transition: background-color 0.5s ease, border-color 0.5s ease;
+}
+
+.suggestion-text {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-color);
+    margin: 0;
+    transition: color 0.5s ease;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+    .app-container {
+        padding: 20px;
+        border-radius: 0; /* Full width on smaller screens */
+        box-shadow: none; /* No shadow on full width mobile */
+    }
+    .app-header {
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 25px;
+    }
+    h1 {
+        font-size: 1.8rem;
+    }
+    .tagline {
+        font-size: 1rem;
+        margin-bottom: 25px;
+    }
+    .primary-btn {
+        width: 100%;
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+    .results-title {
+        font-size: 1.2rem;
+    }
+    .suggestion-text {
+        font-size: 0.95rem;
+    }
+}

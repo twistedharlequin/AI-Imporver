@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PromptFlow AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="light-theme">
+    <div class="app-container">
+        <header class="app-header">
+            <h1>PromptFlow AI</h1>
+            <button id="theme-toggle" aria-label="Toggle dark and light theme" class="theme-toggle-btn">
+                <span class="icon sun-icon"></span>
+                <span class="icon moon-icon"></span>
+            </button>
+        </header>
+
+        <main class="main-content">
+            <p class="tagline">Tingkatkan prompt Anda menjadi lebih cerdas dan efektif.</p>
+            <div class="input-section">
+                <textarea id="promptInput" placeholder="Ketik prompt Anda di sini untuk mendapatkan saran perbaikan..."></textarea>
+                <button id="enhanceBtn" class="primary-btn">Sempurnakan Prompt</button>
+            </div>
+
+            <div id="results" class="results-section">
+                <h2 class="results-title">Saran Perbaikan:</h2>
+                <div class="suggestion-box">
+                    <p id="suggestion" class="suggestion-text"></p>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
